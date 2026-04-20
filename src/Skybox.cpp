@@ -10,6 +10,10 @@ Skybox::Skybox(const char* filename) {
 	UnloadImage(image);
 }
 
+Skybox::~Skybox() {
+	UnloadModel(model);
+}
+
 void Skybox::draw(Camera* camera) {
 	rlDisableBackfaceCulling();
 	rlDisableDepthMask();

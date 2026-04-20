@@ -29,7 +29,6 @@ int main() {
 	// Forward movement parameters
 	constexpr float FORWARD_SPEED = PI / 450.0f;
 	constexpr float MAX_FORWARD_SPEED_MULTIPLIER = 2.0f;
-	constexpr float FORWARD_SPEED_MULTIPLIER_INCREMENT = 0.1f;
 	float currentForwardSpeed = FORWARD_SPEED;
 
 	// Turn parameters
@@ -191,6 +190,7 @@ int main() {
 
 	}
 
+	UnloadModel(player);
 	CloseWindow();
 
 	return 0;
@@ -202,7 +202,7 @@ void InitializeScreen() {
 	int width = GetMonitorWidth(monitor);
 	int height = GetMonitorHeight(monitor);
 
-	InitWindow(1920, 1080, "Spacetron!");
+	InitWindow(width, height, "Orblockade!");
 	ToggleFullscreen();
 	SetTargetFPS(60);
 }

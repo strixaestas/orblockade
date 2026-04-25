@@ -1,5 +1,6 @@
 #pragma once
 #include <raylib.h>
+#define GLSL_VERSION 330
 
 class Skybox {
 	Model model;

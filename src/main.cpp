@@ -149,7 +149,7 @@ int main() {
 		// Find position behind the player
 		Vector3 behindPlayerVector = Vector3RotateByAxisAngle(forwardAxis, upVector, PI / 2.0f);
 		behindPlayerVector = Vector3RotateByAxisAngle(behindPlayerVector, forwardAxis, PI / 3.5f);
-		behindPlayerVector = Vector3Scale(behindPlayerVector, 120.0f);
+		behindPlayerVector = Vector3Scale(behindPlayerVector, 20.0f);
 
 		// Lean camera in line with the player turning
 		Vector3 leanAxis = Vector3RotateByAxisAngle(forwardAxis, upVector, -PI / 2.0f);
@@ -198,11 +198,7 @@ int main() {
 
 
 void InitializeScreen() {
-	int monitor = GetCurrentMonitor();
-	int width = GetMonitorWidth(monitor);
-	int height = GetMonitorHeight(monitor);
-
-	InitWindow(width, height, "Orblockade!");
+	InitWindow(1920, 1080, "Orblockade!");
 	ToggleFullscreen();
 	SetTargetFPS(60);
 }

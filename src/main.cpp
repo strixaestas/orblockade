@@ -27,7 +27,7 @@ int main() {
 	float altitude = 150.4f;
 
 	// Forward movement parameters
-	constexpr float FORWARD_SPEED = PI / 450.0f;
+	constexpr float FORWARD_SPEED = PI / 900.0f;
 	constexpr float MAX_FORWARD_SPEED_MULTIPLIER = 2.0f;
 	float currentForwardSpeed = FORWARD_SPEED;
 

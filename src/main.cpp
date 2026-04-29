@@ -17,8 +17,8 @@ int main() {
 	GeodesicSphere sphere = GeodesicSphere(4);
 	Skybox skybox = Skybox("resources/textures/skybox.png");
 
-	Mesh playerMesh = GenMeshCube(0.4f, 0.8f, 1.6f);
-	Model player = LoadModelFromMesh(playerMesh);
+	// Load the player model
+	Model player = LoadModel("resources/models/SpaceBike.glb");
 
 	Vector3 upVector = { 0.0f, 1.0f, 0.0f };
 	Vector3 forwardAxis = { 1.0f, 0.0f, 0.0f };
@@ -162,13 +162,6 @@ int main() {
 		camera.up = upVector;
 
 
-		// DEBUG
-		// camera.position = { 600.0f, 0.0f, 0.0f };
-		// camera.target = { 0.0f, 0.0f, 0.0f };
-		// camera.up = { 0.0f, 1.0f, 0.0f };
-		// camera.projection = CAMERA_ORTHOGRAPHIC;
-		// camera.fovy = 360.0f;
-
 		////////////////////		
 		// Draw the scene //
 		////////////////////
@@ -183,8 +176,7 @@ int main() {
 				DrawModelWires(sphere.model, sphere.position, 150.0f, DARKGRAY);
 
 				// Draw player
-				DrawModelEx(player, playerPosition, leanAxis, leanAngle* RAD2DEG, Vector3One(), RED);
-				DrawModelWiresEx(player, playerPosition, leanAxis, leanAngle * RAD2DEG, Vector3Scale(Vector3One(), 1.1f), YELLOW);
+				DrawModelEx(player, playerPosition, leanAxis, leanAngle* RAD2DEG, Vector3One(), WHITE);
 			} EndMode3D();
 		} EndDrawing();
 
